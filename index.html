@@ -184,7 +184,7 @@ td li{margin:3px 0}
 .legend h3{font-size:22px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .legend h3 svg{width:28px;height:12px;flex:none}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
-.edu p,.sk p{font-size:15px;color:var(--ink2);margin-bottom:12px}.legend h3.mt{margin-top:26px}
+.edu p,.sk p{font-size:15px;color:var(--ink2);margin-bottom:12px}.legend h3.mt{margin-top:26px}.certno{display:block;font:500 13px var(--cond);color:var(--faint);margin-top:2px}
 .edu b,.sk b{color:var(--ink);font-weight:600;display:block}
 
 /* contact */
@@ -200,6 +200,18 @@ td li{margin:3px 0}
 footer{padding:36px 0 56px;font:500 14px var(--cond);color:var(--faint)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
+.awards{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.award{border:1.5px solid var(--ink);background:var(--sheet);display:flex;flex-direction:column}
+.award-img{padding:14px;border:0;border-bottom:1px solid var(--grid2);background:var(--paper);cursor:zoom-in;display:block}
+.award-img img{width:100%;aspect-ratio:1.42;object-fit:cover;border:1px solid var(--grid2);transition:transform .5s}
+.award-img:hover img{transform:scale(1.02)}
+.award-txt{padding:20px 22px 24px}
+.award-when{font:600 14px var(--cond);color:var(--cl)}
+.award-txt h3{font-size:26px;margin:4px 0 2px}
+.award-txt .co{font:500 15px var(--cond);color:var(--dim);margin-bottom:10px}
+.award-txt p{font-size:15px;color:var(--ink2)}.award-txt p strong{color:var(--ink);font-weight:600}
+.award.feature{grid-column:1/-1;display:grid;grid-template-columns:1.25fr 1fr}.award.feature .award-img{border-bottom:0;border-right:1px solid var(--grid2)}.award.feature .award-img img{aspect-ratio:1.5;object-position:center 30%}.award.feature .award-txt{padding:32px;align-self:center}.award.feature h3{font-size:32px}
+@media(max-width:900px){.award.feature{grid-template-columns:1fr}.award.feature .award-img{border-right:0;border-bottom:1px solid var(--grid2)}}@media(max-width:720px){.awards{grid-template-columns:1fr}}
 /* lightbox */
 .lb{position:fixed;inset:0;z-index:100;background:rgba(27,39,51,.92);display:flex;align-items:center;justify-content:center;padding:60px 70px;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
 .lb.open{opacity:1;visibility:visible}
@@ -262,7 +274,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <header><nav class="wrap" aria-label="Main">
   <a class="mark" href="#top"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="11.5" fill="none" stroke="#1b2733" stroke-width="1.5"/><path d="M1 13h24M13 1v24" stroke="#b8336a" stroke-width="1" stroke-dasharray="4 2 1 2"/></svg>Vishnu Prakash</a>
   <button class="menu" id="menu" aria-expanded="false" aria-controls="links">Menu</button>
-  <div class="links" id="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#apps">Apps</a><a href="#contact">Contact</a></div>
+  <div class="links" id="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#awards">Awards</a><a href="#skills">Skills</a><a href="#apps">Apps</a><a href="#contact">Contact</a></div>
 </nav></header>
 
 <main id="top">
@@ -350,7 +362,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <thead><tr><th>NO.</th><th>PERIOD</th><th>ROLE</th></tr></thead>
     <tbody>
       <tr><td class="rev">4</td><td class="when">Aug 2022 – Present<br><span class="note">Abu Dhabi, UAE</span></td><td class="desc"><h3>Mechanical Engineer, Pipe Support Lead</h3><div class="co">EPIC Piping International</div><ul><li>Lead pipe support design for oil and gas EPC projects, producing GA, detail and fabrication drawings for steel pipe supports in AutoCAD.</li><li>Execute pipe support drawings, manage review and revision cycles, and approve final deliverables.</li><li>Prepare detailed material take-offs (MTOs) for steel pipe supports and fabrication.</li><li>Control engineering transmittals from the client, ensuring full compliance with project requirements and standards.</li><li>Created and maintain the Fabrication Engineering Master to client standards, improving traceability and document control.</li><li>Coordinate with engineering, fabrication and QA/QC teams to resolve technical issues and deliver on time.</li><li>Developed an AutoCAD drawing automation tool that increased drawing productivity by up to 80%.</li></ul></td></tr>
-      <tr><td class="rev">3</td><td class="when">Dec 2021 – Aug 2022<br><span class="note">Kochi, India</span></td><td class="desc"><h3>Mechanical Engineer</h3><div class="co">Wellworth Polymers</div><ul><li>Designed and engineered PVC pipe production prototypes with Mirror Finish Technology (MFT), improving surface quality and efficiency; the project received National Award recognition.</li><li>Designed and tested dies for MFT pipes to meet strict QC standards.</li><li>Developed an in-line socketing machine that improved production efficiency.</li><li>Built a belt traction unit for in-house product testing and prototyping.</li><li>Delivered cost-effective, CAD-driven design solutions for manufacturing operations.</li></ul></td></tr>
+      <tr><td class="rev">3</td><td class="when">Dec 2021 – Aug 2022<br><span class="note">Kochi, India</span></td><td class="desc"><h3>Mechanical Engineer</h3><div class="co">Wellworth Polymers</div><ul><li>Designed and engineered PVC pipe production prototypes with Mirror Finish Technology (MFT), improving surface quality and efficiency; the project was runner-up at the 11th National Petrochemicals Awards (2022).</li><li>Designed and tested dies for MFT pipes to meet strict QC standards.</li><li>Developed an in-line socketing machine that improved production efficiency.</li><li>Built a belt traction unit for in-house product testing and prototyping.</li><li>Delivered cost-effective, CAD-driven design solutions for manufacturing operations.</li></ul></td></tr>
       <tr><td class="rev">2</td><td class="when">Mar 2017 – Sep 2021<br><span class="note">Kochi, India</span></td><td class="desc"><h3>Mechanical Design Engineer</h3><div class="co">Capriole Expert Enterprises</div><ul><li>Prepared preliminary drawings and Bills of Quantities (BOQ) for multiple pre-engineered buildings, in line with structural and safety standards.</li><li>Designed manufacturing machinery, including a 120 HP hammer mill and tutti-frutti processing machines.</li><li>Contributed to the design of turmeric and chilli extraction plants.</li><li>Worked with cross-functional teams to optimise designs and meet project schedules.</li></ul></td></tr>
       <tr><td class="rev">1</td><td class="when">Sep 2015 – Oct 2016<br><span class="note">Puducherry, India</span></td><td class="desc"><h3>NDT Inspector</h3><div class="co">TVS Fastener Limited, contract via Neptune Inspection Technology</div><ul><li>Performed non-destructive testing using Magnetic Particle Testing (MT) to detect surface and subsurface defects.</li><li>Supported the quality assurance programme, ensuring reliability of manufactured products.</li></ul></td></tr>
     </tbody>
@@ -377,9 +389,28 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </table>
 </div></section>
 
+<section class="s" id="awards"><div class="wrap">
+  <div class="rule"></div>
+  <div class="shead"><div class="callout"><span>D</span><i>awards</i></div><div><h2>Awards &amp; recognition</h2></div></div>
+  <div class="awards">
+    <article class="award feature">
+      <button type="button" class="award-img" data-src="award-national-petrochemicals.jpg" aria-label="View photo from the 11th National Petrochemicals Awards"><img src="award-national-petrochemicals.jpg" alt="Vishnu Prakash receiving the award at the 11th National Petrochemicals Awards, 2022" loading="lazy"></button>
+      <div class="award-txt"><span class="award-when">September 2022</span><h3>Runner-up, 11th National Petrochemicals Awards</h3><div class="co">Government of India, Ministry of Chemicals &amp; Fertilizers, Department of Chemicals &amp; Petrochemicals</div><p>Runner-up in the <strong>Polymers in Agriculture and Water Conservation</strong> category, for the Mirror Finish Technology (MFT) PVC pipe project at Wellworth Polymers.</p></div>
+    </article>
+    <article class="award">
+      <button type="button" class="award-img" data-src="award-epic-top-performer.jpg" aria-label="View Top Performer certificate"><img src="award-epic-top-performer.jpg" alt="Top Performer certificate from EPIC Piping, EPIC Day 2026" loading="lazy"></button>
+      <div class="award-txt"><span class="award-when">2026</span><h3>Top Performer</h3><div class="co">EPIC Piping, EPIC Day 2026</div><p>For outstanding performance and dedicated contribution to the Engineering Department.</p></div>
+    </article>
+    <article class="award">
+      <button type="button" class="award-img" data-src="award-jgc-appreciation.jpg" aria-label="View Certificate of Appreciation from JGC Arabia"><img src="award-jgc-appreciation.jpg" alt="Certificate of Appreciation from JGC Arabia, Zuluf Hydrocarbon Facility Project" loading="lazy"></button>
+      <div class="award-txt"><span class="award-when">June 2025</span><h3>Certificate of Appreciation</h3><div class="co">JGC Arabia, Saudi Aramco Zuluf Hydrocarbon Facility Project</div><p>Presented by the JGC Arabia Piping Manager as Pipe Support Lead, for diligent and productive work with the highest concern for safety and quality.</p></div>
+    </article>
+  </div>
+</div></section>
+
 <section class="s" id="skills"><div class="wrap">
   <div class="rule"></div>
-  <div class="shead"><div class="callout"><span>D</span><i>skills</i></div><div><h2>Skills</h2></div></div>
+  <div class="shead"><div class="callout"><span>E</span><i>skills</i></div><div><h2>Skills</h2></div></div>
   <div class="legend">
     <div class="sk"><h3>Core skills</h3>
       <p><b>Design &amp; drafting</b>Structural steel detailing, GA, detail and fabrication drawings, steel structures, pipe supports, pre-engineered buildings, 2D/3D CAD modelling</p>
@@ -389,18 +420,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </div>
     <div><h3>Engineering software</h3><div class="tags"><span class="chip">AutoCAD</span><span class="chip">Tekla Structures</span><span class="chip">SketchUp</span><span class="chip">Oracle JD Edwards</span><span class="chip">Excel (advanced, VBA)</span><span class="chip">Microsoft Office</span><span class="chip">Navisworks (basic)</span><span class="chip">SolidWorks (basic)</span><span class="chip">AutoSpool (basic)</span></div>
       <h3 class="mt">Languages</h3><div class="tags"><span class="chip">English</span><span class="chip">Malayalam</span><span class="chip">Tamil</span></div></div>
-    <div class="edu"><h3>Education &amp; certifications</h3>
+    <div class="edu"><h3>Education</h3>
       <p><b>AMIE, Mechanical Engineering</b>Equivalent to Bachelor of Engineering, Institution of Engineers (India), 2023, UAE attested</p>
       <p><b>Diploma in Mechanical Engineering</b>Government Polytechnic College, Kerala, 2012–2015, UAE attested</p>
-      <p><b>Structural Steel Detailing &amp; Modelling, Tekla Structures</b>Reliant Institute of Technology, Trimble Tekla authorised training centre, 2024</p>
-      <p><b>Foundation in Mechanical CAD (A+ grade)</b>STED Council, 2024</p>
+      <h3 class="mt">Certifications</h3>
+      <p><b>Structural Steel Detailing &amp; Modelling, Tekla Structures</b>Reliant Institute of Technology (Trimble Tekla Authorized Training Centre), 2024<span class="certno">Cert no. RIT-2024/TS/00023</span></p>
+      <p><b>Foundation in Mechanical CAD (A+ grade)</b>STED Council, 2024<span class="certno">Cert no. 479024453</span></p>
+      <p><b>Piping &amp; Pipeline Engineering</b>2015<span class="certno">Cert no. MAT/PE/42-2015</span></p>
+      <p><b>QA/QC Engineering</b>2015<span class="certno">Cert no. MAT/QC/42-2015</span></p>
     </div>
   </div>
 </div></section>
 
 <section class="s" id="apps"><div class="wrap">
   <div class="rule"></div>
-  <div class="shead"><div class="callout"><span>E</span><i>apps</i></div><div><h2>Apps I've built</h2><p>Alongside engineering, I design and code desktop apps, some for engineering work and one published on the Microsoft Store. Open any app to see what it does.</p></div></div>
+  <div class="shead"><div class="callout"><span>F</span><i>apps</i></div><div><h2>Apps I've built</h2><p>Alongside engineering, I design and code desktop apps, some for engineering work and one published on the Microsoft Store. Open any app to see what it does.</p></div></div>
   <div class="apps" id="applist"></div>
 </div></section>
 
@@ -427,9 +461,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 const PLATES={
   sheets:'<svg viewBox="0 0 120 80" fill="none" stroke="#2f6fb0" stroke-width="1.5"><rect x="30" y="8" width="70" height="50"/><rect x="22" y="15" width="70" height="50" fill="#f3f5f6"/><rect x="14" y="22" width="70" height="50" fill="#fbfcfc"/><path d="M58 60h26v12H58zM58 66h26M24 34h30M24 42h20" stroke="#1b2733"/></svg>',
   chart:'<svg viewBox="0 0 120 80" fill="none" stroke-width="1.5"><path d="M14 70h96M14 70V8" stroke="#1b2733"/><rect x="24" y="44" width="12" height="26" stroke="#2f6fb0"/><rect x="44" y="30" width="12" height="40" stroke="#2f6fb0"/><rect x="64" y="38" width="12" height="32" stroke="#2f6fb0"/><rect x="84" y="18" width="12" height="52" stroke="#2f6fb0"/><path d="M14 26h96" stroke="#b8336a" stroke-dasharray="8 3 2 3"/></svg>',
+  support:'<svg viewBox="0 0 120 80" fill="none" stroke-width="1.5"><circle cx="60" cy="22" r="14" stroke="#1b2733"/><path d="M60 36v8M44 44h32v4H44zM56 48h8v20h-8zM40 68h40v4H40z" stroke="#2f6fb0"/><path d="M60 2v76M38 22h44" stroke="#b8336a" stroke-width="1" stroke-dasharray="6 2 1 2"/><path d="M92 44v28M88 44h8M88 72h8" stroke="#2f6fb0" stroke-width="1"/></svg>',
   chat:'<svg viewBox="0 0 120 80" fill="none" stroke-width="1.5"><path d="M14 10h62v34H38l-12 10V44H14z" stroke="#1b2733"/><path d="M46 30h60v32H94v10l-12-10H46z" stroke="#2f6fb0" fill="#fbfcfc"/><path d="M24 22h40M24 32h28M56 42h40M56 52h30" stroke="#7f8c97"/></svg>'
 };
 const APPS=[
+ {id:'fabricator',name:'Fabricator',sum:'Creates pipe support fabrication drawings from scratch, without AutoCAD or Tekla.',chips:[['dev','In development'],['','Standalone'],['','ASME'],['','EN standards']],
+  desc:'Currently in development. A standalone app with its own drawing engine that produces complete pipe support fabrication drawings by itself, with no AutoCAD or Tekla licence needed, and designs each support to the client\'s requirements.',
+  points:['<strong>Fabrication drawings from scratch</strong>, generated entirely inside the app with no AutoCAD or Tekla','<strong>Designed to client requirements</strong>, so drawings follow each project\'s specifications','<strong>Wide library of typical pipe supports</strong>, ready to release','<strong>Support calculations</strong> built in','<strong>Design new supports from scratch</strong> when no typical fits','<strong>ASME and European (EN) standards</strong> integrated'],
+  shots:['fabricator-1.png','fabricator-2.png'],plate:'support'},
  {id:'engtool',name:'ENGTOOL',sum:'Generates pipe support fabrication drawings in AutoCAD, in bulk.',chips:[['live','In production'],['','Python'],['','PyQt6'],['','AutoCAD']],
   desc:'My main production app. It drives AutoCAD to generate fabrication drawings in bulk from a drawing template and a data file, and brings BOM, file handling and team reporting into one dashboard.',
   points:['<strong>Bulk AutoCAD DWG generation</strong> from templates and Excel or CSV data, with input checks before each batch','<strong>BOM and CSV generation</strong> from support data','File handler and DPR manager built in','<strong>Login and admin panel</strong>: module permissions, device approval, version publishing and activity logs','Packaged as a Windows app'],
@@ -481,6 +520,7 @@ lb.querySelector('.nx').onclick=()=>{idx=(idx+1)%set.length;show()};
 lb.addEventListener('click',e=>{if(e.target===lb)closeLB()});
 document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')lb.querySelector('.pv').click();if(e.key==='ArrowRight')lb.querySelector('.nx').click()});
 
+document.querySelectorAll('.award-img').forEach(b=>b.addEventListener('click',()=>{const all=[...document.querySelectorAll('.award-img')];openLB(all.map(x=>x.dataset.src),all.indexOf(b))}));
 /* drafted rules draw in once */
 if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.6});document.querySelectorAll('.rule').forEach(r=>io.observe(r))}else document.querySelectorAll('.rule').forEach(r=>r.classList.add('in'));
 

@@ -219,13 +219,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .aw-nav button:disabled{opacity:.3;cursor:default}
 .aw-hint{font:500 14px var(--cond);color:var(--faint);margin-top:4px;display:none}
 @media(max-width:720px){.award{flex-basis:84%;min-width:0}.aw-nav{display:none}.aw-hint{display:block}}
-.psub{font-size:24px;margin-bottom:4px}.psub.mt{margin-top:56px}.psub-p{color:var(--ink2);font-size:15px;margin-bottom:16px}
+.psub{font-size:24px;margin-bottom:4px}.bom .sub{display:block;font-weight:400;font-size:14px;color:var(--ink2);margin-top:2px}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.ind td:last-child{text-align:right;width:90px}.ph-btn{font:600 14px var(--cond);padding:5px 12px;border:1.5px solid var(--ink);background:var(--sheet);cursor:zoom-in;transition:background .15s,color .15s}.ph-btn:hover{background:var(--ink);color:var(--sheet)}
+.psub.mt{margin-top:56px}.psub-p{color:var(--ink2);font-size:15px;margin-bottom:16px}
 .iproj{display:grid;gap:24px;margin-top:16px}
 .ip{border:1.5px solid var(--ink);background:var(--sheet)}
-.ip-img{padding:12px;border:0;border-bottom:1px solid var(--grid2);background:var(--paper);cursor:zoom-in;display:block;width:100%}
+.ip-img{padding:12px;border:0;border-top:1px solid var(--grid2);background:var(--paper);cursor:zoom-in;display:block;width:100%}
 .ip-img img{width:100%;aspect-ratio:4/1;object-fit:cover;border:1px solid var(--grid2)}
-.ip-txt{padding:24px 26px}.ip-txt h3{font-size:28px;margin-bottom:14px}
-.ip-txt dl{margin:0;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-top:1px solid var(--grid2)}.ip-txt dl div{padding:10px 14px 0 0}
+.ip-txt{padding:24px 26px}.ip-txt h3{font-size:28px}.ip-top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:6px}.ip-scope{color:var(--ink2);font-size:15px;margin-bottom:14px}
+.ip-toggle{font:600 16px var(--cond);padding:8px 16px;border:1.5px solid var(--ink);background:var(--sheet);cursor:pointer;flex:none;transition:background .15s,color .15s}.ip-toggle:hover,.ip-toggle[aria-expanded=true]{background:var(--ink);color:var(--sheet)}
+.ip-photo{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.7,0,.2,1)}.ip.open .ip-photo{grid-template-rows:1fr}.ip-photo-in{overflow:hidden}
+.ip-txt dl{margin:0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--grid2)}.ip-txt dl div{padding:10px 14px 0 0}
 .ip-txt dt{font:500 14px var(--cond);color:var(--faint);display:block}.ip-txt dd{margin:0;font-size:15px;color:var(--ink)}
 @media(max-width:720px){.ip-txt dl{grid-template-columns:1fr 1fr}.ip-img img{aspect-ratio:3/1}}
 /* lightbox */
@@ -266,7 +269,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .gallery{grid-template-columns:1fr}
   table.rev thead{display:none}table.rev tr{display:grid;grid-template-columns:60px 1fr;border-bottom:1px solid var(--grid2)}
   table.rev td{border-bottom:0}table.rev td.when{grid-column:2;width:auto;padding-bottom:0}table.rev td.rev{grid-row:span 2}table.rev td.desc{grid-column:2}
-  .bom th:nth-child(4),.bom td:nth-child(4){display:none}
+  .bom th:nth-child(4),.bom td:nth-child(4){display:none}.ind th:nth-child(5),.ind td:nth-child(5){display:none}
   .clist a{grid-template-columns:1fr;gap:2px;padding:14px 18px}
   .contact .left{padding:26px}
   .lb{padding:60px 10px}
@@ -275,7 +278,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   html{scroll-behavior:auto}
   .draw{animation:none;stroke-dashoffset:0}.namedim{animation:none;transform:none}.fadein{animation:none;opacity:1}
   .rule{transform:none;transition:none}
-  .app-body,.app-content,.tog,.tog:after{transition:none}
+  .app-body,.app-content,.tog,.tog:after,.ip-photo{transition:none}
 }
 </style>
 </head>
@@ -405,15 +408,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </tbody>
   </table>
   <h3 class="psub mt">Projects in India</h3>
-  <div class="iproj">
-    <article class="ip">
-      <button type="button" class="ip-img" data-src="project-peb-telangana.jpg" aria-label="View photo of the PEB extraction plant in Telangana"><img src="project-peb-telangana.jpg" alt="Completed pre-engineered steel building for an extraction plant in Telangana" loading="lazy"></button>
-      <div class="ip-txt">
-        <h3>PEB extraction plant</h3>
-        <dl><div><dt>Structure</dt><dd>Composite structure pre-engineered building (PEB)</dd></div><div><dt>Size</dt><dd>20 × 120 m</dd></div><div><dt>Location</dt><dd>Telangana, India</dd></div><div><dt>Year</dt><dd>2019</dd></div></dl>
-      </div>
-    </article>
-  </div>
+  <table class="bom ind">
+    <thead><tr><th>ITEM</th><th>PROJECT</th><th>CLIENT</th><th>LOCATION</th><th>YEAR</th><th><span class="sr">Photo</span></th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td class="pn">Spice oleoresin plant<span class="sub">Pre-engineered building (PEB)</span></td><td>Flavco Natural Products Pvt Ltd</td><td>Kerala</td><td>2021</td><td></td></tr>
+      <tr><td>2</td><td class="pn">Chilli extraction plant<span class="sub">Spice oleoresin plant, encased composite PEB structure</span></td><td>Vidya Herbs Pvt Ltd</td><td>Telangana</td><td>2019</td><td><button type="button" class="ph-btn" data-src="project-peb-telangana.jpg" aria-label="View photo of the chilli extraction plant">Photo</button></td></tr>
+      <tr><td>3</td><td class="pn">Spice oleoresin plant<span class="sub">Encased composite PEB structure</span></td><td>Manko Natural Flavours and Extracts Pvt Ltd</td><td>Kerala</td><td>2017</td><td></td></tr>
+    </tbody>
+  </table>
 </div></section>
 
 <section class="s" id="awards"><div class="wrap">
@@ -558,7 +560,8 @@ row.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;down=tr
 window.addEventListener('pointermove',e=>{if(!down)return;const dx=e.clientX-sx;if(Math.abs(dx)>5){moved=true;row.classList.add('dragging')}row.scrollLeft=sl-dx});
 window.addEventListener('pointerup',()=>{if(!down)return;down=false;row.classList.remove('dragging')});
 row.addEventListener('click',e=>{if(moved){e.stopPropagation();e.preventDefault();moved=false}},true);})();
-document.querySelectorAll('.ip-img').forEach(b=>b.addEventListener('click',()=>{const all=[...document.querySelectorAll('.ip-img')];openLB(all.map(x=>x.dataset.src),all.indexOf(b))}));
+document.querySelectorAll('.ip-toggle').forEach(t=>t.addEventListener('click',()=>{const c=t.closest('.ip');const o=c.classList.toggle('open');t.setAttribute('aria-expanded',o);t.textContent=o?'Hide photo':'Show photo'}));
+document.querySelectorAll('.ph-btn').forEach(b=>b.addEventListener('click',()=>openLB([b.dataset.src],0)));
 /* drafted rules draw in once */
 if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.6});document.querySelectorAll('.rule').forEach(r=>io.observe(r))}else document.querySelectorAll('.rule').forEach(r=>r.classList.add('in'));
 

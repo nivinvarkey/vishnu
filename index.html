@@ -97,6 +97,7 @@ section.s{padding:96px 0}
 
 /* about */
 .about{display:grid;grid-template-columns:330px 1fr;gap:56px;align-items:start}
+.about.nophoto{grid-template-columns:1fr}.about.nophoto .portrait{display:none}
 .portrait{position:relative;border:1.5px solid var(--ink);background:var(--sheet);padding:10px}
 .portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 25%;filter:grayscale(.15) contrast(1.03)}
 .portrait figcaption{font:500 13px var(--cond);color:var(--ink2);padding-top:8px;display:flex;justify-content:space-between}
@@ -183,8 +184,8 @@ td li{margin:3px 0}
 .legend h3{font-size:22px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .legend h3 svg{width:28px;height:12px;flex:none}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
-.edu p{font-size:15px;color:var(--ink2);margin-bottom:12px}
-.edu b{color:var(--ink);font-weight:600;display:block}
+.edu p,.sk p{font-size:15px;color:var(--ink2);margin-bottom:12px}.legend h3.mt{margin-top:26px}
+.edu b,.sk b{color:var(--ink);font-weight:600;display:block}
 
 /* contact */
 .contact{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid var(--ink);background:var(--sheet)}
@@ -261,7 +262,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <header><nav class="wrap" aria-label="Main">
   <a class="mark" href="#top"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="11.5" fill="none" stroke="#1b2733" stroke-width="1.5"/><path d="M1 13h24M13 1v24" stroke="#b8336a" stroke-width="1" stroke-dasharray="4 2 1 2"/></svg>Vishnu Prakash</a>
   <button class="menu" id="menu" aria-expanded="false" aria-controls="links">Menu</button>
-  <div class="links" id="links"><a href="#about">About</a><a href="#apps">Apps</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
+  <div class="links" id="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#apps">Apps</a><a href="#contact">Contact</a></div>
 </nav></header>
 
 <main id="top">
@@ -270,8 +271,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div>
       <div class="namewrap"><h1>Vishnu<br>Prakash</h1>
         <div class="namedim" aria-hidden="true"><svg viewBox="0 0 400 22" preserveAspectRatio="none"><path d="M0 2v20M400 2v20M0 12h400" fill="none" stroke="currentColor" stroke-width="1.2" vector-effect="non-scaling-stroke"/><path d="M0 12l10 -4v8zM400 12l-10 -4v8z" fill="currentColor"/></svg></div></div>
-      <p class="lede">Mechanical engineer and pipe support lead in Abu Dhabi. I design pipe supports and structural steel for oil and gas EPC projects, and write the software that takes the repetitive drafting out of it.</p>
-      <div class="actions"><a class="btn solid" href="#apps">See my apps</a><a class="btn" href="Vishnu_Prakash_CV.pdf" download>Download CV</a></div>
+      <p class="lede">Mechanical engineer and pipe support lead in Abu Dhabi, with 10 years in oil and gas EPC projects, structural steel and fabrication design.</p>
+      <div class="actions"><a class="btn solid" href="#experience">View my experience</a><a class="btn" href="Vishnu_Prakash_CV.pdf" download>Download CV</a></div>
     </div>
     <div class="drawing" aria-label="Line drawing of a trunnion support under a 90 degree elbow">
       <svg viewBox="0 0 540 580" role="img">
@@ -318,52 +319,47 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <section class="s" id="about"><div class="wrap">
   <div class="rule"></div>
-  <div class="shead"><div class="callout"><span>A</span><i>about</i></div><div><h2>From fabrication drawings to working software</h2></div></div>
+  <div class="shead"><div class="callout"><span>A</span><i>about</i></div><div><h2>About me</h2></div></div>
   <div class="about">
-    <figure class="portrait"><img src="vishnu-photo.jpg" alt="Portrait of Vishnu Prakash" onerror="this.closest('figure').style.display='none'"><figcaption><span>Vishnu Prakash</span><span>Abu Dhabi</span></figcaption></figure>
+    <figure class="portrait"><img src="vishnu-photo.jpg" alt="Portrait of Vishnu Prakash" onerror="this.closest('.about').classList.add('nophoto')"><figcaption><span>Vishnu Prakash</span><span>Abu Dhabi</span></figcaption></figure>
     <div class="about-text">
-      <p>I've spent 10 years across <strong>oil and gas EPC projects, structural steel and manufacturing design</strong>. At EPIC Piping International I lead pipe support engineering: GA, detail and fabrication drawings, material take-offs, reviews and revisions for ADNOC, Saudi Aramco and the contractors who build for them.</p>
-      <p>Most drafting work repeats itself, so I automate it. I build desktop tools in <strong>Python</strong> that generate AutoCAD drawings in bulk, calculate trunnions and BOMs, and turn team progress reports into one dashboard.</p>
+      <p>I'm a mechanical engineer with 10 years of experience in <strong>oil and gas EPC projects, structural steel and fabrication design, and manufacturing</strong>.</p>
+      <p>As Pipe Support Lead at EPIC Piping International, I deliver GA, detail and fabrication drawings and material take-offs for onshore and offshore projects for <strong>ADNOC, Saudi Aramco, NPCC, Saipem, Tecnimont and JGC</strong>. I manage review and revision cycles, approve final deliverables, control client transmittals and coordinate with engineering, fabrication and QA/QC teams.</p>
+      <p>Before that I designed PVC pipe production equipment, manufacturing machinery and pre-engineered buildings, and started my career as an NDT inspector. I'm certified in structural steel detailing and modelling with Tekla Structures.</p>
       <div class="facts">
-        <div class="fact"><b>80%</b><span>faster drawing production</span></div>
+        <div class="fact"><b>10+</b><span>years of experience</span></div>
         <div class="fact"><b>10</b><span>major EPC projects</span></div>
-        <div class="fact"><b>5</b><span>apps built, 1 on the Microsoft Store</span></div>
+        <div class="fact"><b>7</b><span>EPC contractors supported</span></div>
       </div>
     </div>
   </div>
   <div class="does">
-    <div><h3>Pipe support design</h3><p>GA, detail and fabrication drawings, MTOs, trunnions and typical supports to client standards.</p></div>
-    <div><h3>Structural steel detailing</h3><p>Steel structures and PEB drawings, BOQs and Tekla Structures modelling.</p></div>
-    <div><h3>Engineering automation</h3><p>Python tools that drive AutoCAD and Excel to remove repetitive drafting.</p></div>
-    <div><h3>Document control</h3><p>Client transmittals, revision cycles and the Fabrication Engineering Master.</p></div>
-    <div><h3>Coordination</h3><p>Working between engineering, fabrication and QA/QC to keep delivery on time.</p></div>
-    <div><h3>Codes and quality</h3><p>ASME and ASTM, client specifications, NDT background in magnetic particle testing.</p></div>
+    <div><h3>Pipe support design</h3><p>GA, detail and fabrication drawings for steel pipe supports and trunnions in AutoCAD, to client standards.</p></div>
+    <div><h3>Structural steel detailing</h3><p>Steel structures and pre-engineered buildings, modelled and detailed in Tekla Structures.</p></div>
+    <div><h3>Material take-off &amp; BOQ</h3><p>Detailed MTOs for pipe supports and fabrication, and BOQs for steel buildings.</p></div>
+    <div><h3>Review &amp; revision control</h3><p>Design reviews, constructability checks, revision cycles and approval of final deliverables.</p></div>
+    <div><h3>Document control</h3><p>Client engineering transmittals and the Fabrication Engineering Master for full traceability.</p></div>
+    <div><h3>Quality &amp; codes</h3><p>ASME, ASTM and client standards, with a background in NDT magnetic particle testing.</p></div>
   </div>
-</div></section>
-
-<section class="s" id="apps"><div class="wrap">
-  <div class="rule"></div>
-  <div class="shead"><div class="callout"><span>B</span><i>apps</i></div><div><h2>Software I've built</h2><p>Desktop apps I designed and coded to automate real engineering work. Open any app to see what it does.</p></div></div>
-  <div class="apps" id="applist"></div>
 </div></section>
 
 <section class="s" id="experience"><div class="wrap">
   <div class="rule"></div>
-  <div class="shead"><div class="callout"><span>C</span><i>career</i></div><div><h2>Revision history</h2><p>Each role, newest first, recorded the way a drawing records its revisions.</p></div></div>
+  <div class="shead"><div class="callout"><span>B</span><i>career</i></div><div><h2>Experience</h2></div></div>
   <table class="rev">
-    <thead><tr><th>REV</th><th>DATE</th><th>DESCRIPTION</th></tr></thead>
+    <thead><tr><th>NO.</th><th>PERIOD</th><th>ROLE</th></tr></thead>
     <tbody>
-      <tr><td class="rev">4</td><td class="when">Aug 2022 – Present<br><span class="note">Abu Dhabi, UAE</span></td><td class="desc"><h3>Mechanical Engineer, Pipe Support Lead</h3><div class="co">EPIC Piping International</div><ul><li>Lead pipe support design for oil and gas EPC projects: GA, detail and fabrication drawings in AutoCAD.</li><li>Review and approve drawings, manage revision cycles and prepare MTOs for steel pipe supports.</li><li>Built a drawing automation tool in Python that raised drawing productivity by up to 80%.</li><li>Control client transmittals and maintain the Fabrication Engineering Master.</li></ul></td></tr>
-      <tr><td class="rev">3</td><td class="when">Dec 2021 – Aug 2022<br><span class="note">Kochi, India</span></td><td class="desc"><h3>Mechanical Engineer</h3><div class="co">Wellworth Polymers</div><ul><li>Designed PVC pipe production prototypes with Mirror Finish Technology; the project received a National Award.</li><li>Designed and tested extrusion dies, an in-line socketing machine and a belt traction unit.</li></ul></td></tr>
-      <tr><td class="rev">2</td><td class="when">Mar 2017 – Sep 2021<br><span class="note">Kochi, India</span></td><td class="desc"><h3>Mechanical Design Engineer</h3><div class="co">Capriole Expert Enterprises</div><ul><li>Prepared drawings and BOQs for pre-engineered buildings.</li><li>Designed manufacturing machinery including a 120 HP hammer mill, and worked on turmeric and chilli extraction plants.</li></ul></td></tr>
-      <tr><td class="rev">1</td><td class="when">Sep 2015 – Oct 2016<br><span class="note">Puducherry, India</span></td><td class="desc"><h3>NDT Inspector</h3><div class="co">TVS Fasteners, via Neptune Inspection Technology</div><ul><li>Magnetic particle testing for surface and subsurface defects in manufactured components.</li></ul></td></tr>
+      <tr><td class="rev">4</td><td class="when">Aug 2022 – Present<br><span class="note">Abu Dhabi, UAE</span></td><td class="desc"><h3>Mechanical Engineer, Pipe Support Lead</h3><div class="co">EPIC Piping International</div><ul><li>Lead pipe support design for oil and gas EPC projects, producing GA, detail and fabrication drawings for steel pipe supports in AutoCAD.</li><li>Execute pipe support drawings, manage review and revision cycles, and approve final deliverables.</li><li>Prepare detailed material take-offs (MTOs) for steel pipe supports and fabrication.</li><li>Control engineering transmittals from the client, ensuring full compliance with project requirements and standards.</li><li>Created and maintain the Fabrication Engineering Master to client standards, improving traceability and document control.</li><li>Coordinate with engineering, fabrication and QA/QC teams to resolve technical issues and deliver on time.</li><li>Developed an AutoCAD drawing automation tool that increased drawing productivity by up to 80%.</li></ul></td></tr>
+      <tr><td class="rev">3</td><td class="when">Dec 2021 – Aug 2022<br><span class="note">Kochi, India</span></td><td class="desc"><h3>Mechanical Engineer</h3><div class="co">Wellworth Polymers</div><ul><li>Designed and engineered PVC pipe production prototypes with Mirror Finish Technology (MFT), improving surface quality and efficiency; the project received National Award recognition.</li><li>Designed and tested dies for MFT pipes to meet strict QC standards.</li><li>Developed an in-line socketing machine that improved production efficiency.</li><li>Built a belt traction unit for in-house product testing and prototyping.</li><li>Delivered cost-effective, CAD-driven design solutions for manufacturing operations.</li></ul></td></tr>
+      <tr><td class="rev">2</td><td class="when">Mar 2017 – Sep 2021<br><span class="note">Kochi, India</span></td><td class="desc"><h3>Mechanical Design Engineer</h3><div class="co">Capriole Expert Enterprises</div><ul><li>Prepared preliminary drawings and Bills of Quantities (BOQ) for multiple pre-engineered buildings, in line with structural and safety standards.</li><li>Designed manufacturing machinery, including a 120 HP hammer mill and tutti-frutti processing machines.</li><li>Contributed to the design of turmeric and chilli extraction plants.</li><li>Worked with cross-functional teams to optimise designs and meet project schedules.</li></ul></td></tr>
+      <tr><td class="rev">1</td><td class="when">Sep 2015 – Oct 2016<br><span class="note">Puducherry, India</span></td><td class="desc"><h3>NDT Inspector</h3><div class="co">TVS Fastener Limited, contract via Neptune Inspection Technology</div><ul><li>Performed non-destructive testing using Magnetic Particle Testing (MT) to detect surface and subsurface defects.</li><li>Supported the quality assurance programme, ensuring reliability of manufactured products.</li></ul></td></tr>
     </tbody>
   </table>
 </div></section>
 
 <section class="s" id="projects"><div class="wrap">
   <div class="rule"></div>
-  <div class="shead"><div class="callout"><span>D</span><i>projects</i></div><div><h2>Project list</h2><p>Major EPC projects I delivered pipe support drawings for at EPIC Piping International.</p></div></div>
+  <div class="shead"><div class="callout"><span>C</span><i>projects</i></div><div><h2>Major projects</h2><p>Major EPC projects I delivered pipe support drawings for at EPIC Piping International.</p></div></div>
   <table class="bom">
     <thead><tr><th>ITEM</th><th>PROJECT</th><th>CONTRACTOR</th><th>CLIENT</th></tr></thead>
     <tbody>
@@ -383,22 +379,35 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <section class="s" id="skills"><div class="wrap">
   <div class="rule"></div>
-  <div class="shead"><div class="callout"><span>E</span><i>skills</i></div><div><h2>Legend</h2><p>The tools, skills and qualifications behind the work.</p></div></div>
+  <div class="shead"><div class="callout"><span>D</span><i>skills</i></div><div><h2>Skills</h2></div></div>
   <div class="legend">
-    <div><h3><svg viewBox="0 0 28 12"><path d="M0 6h28" stroke="#1b2733" stroke-width="2"/></svg>Engineering</h3><div class="tags"><span class="chip">AutoCAD</span><span class="chip">Tekla Structures</span><span class="chip">SketchUp</span><span class="chip">Navisworks (basic)</span><span class="chip">SolidWorks (basic)</span><span class="chip">AutoSpool (basic)</span><span class="chip">Oracle JD Edwards</span><span class="chip">ASME / ASTM</span><span class="chip">MTO &amp; BOQ</span></div></div>
-    <div><h3><svg viewBox="0 0 28 12"><path d="M0 6h28" stroke="#2f6fb0" stroke-width="2"/></svg>Automation</h3><div class="tags"><span class="chip">Python</span><span class="chip">AI-assisted workflows</span><span class="chip">Excel VBA</span><span class="chip">Advanced Excel</span><span class="chip">PyQt6</span><span class="chip">Tkinter</span><span class="chip">SQLite</span><span class="chip">Supabase</span></div></div>
-    <div class="edu"><h3><svg viewBox="0 0 28 12"><path d="M0 6h28" stroke="#b8336a" stroke-width="1.5" stroke-dasharray="8 3 2 3"/></svg>Qualifications</h3>
+    <div class="sk"><h3>Core skills</h3>
+      <p><b>Design &amp; drafting</b>Structural steel detailing, GA, detail and fabrication drawings, steel structures, pipe supports, pre-engineered buildings, 2D/3D CAD modelling</p>
+      <p><b>Engineering</b>Material take-off (MTO), Bill of Quantities (BOQ), constructability review, material management, design review and revision control</p>
+      <p><b>Project delivery</b>EPC projects, offshore and onshore oil and gas, document control, engineering transmittals, multi-discipline coordination</p>
+      <p><b>Codes &amp; quality</b>ASME, ASTM, client engineering standards, NDT magnetic particle testing</p>
+    </div>
+    <div><h3>Engineering software</h3><div class="tags"><span class="chip">AutoCAD</span><span class="chip">Tekla Structures</span><span class="chip">SketchUp</span><span class="chip">Oracle JD Edwards</span><span class="chip">Excel (advanced, VBA)</span><span class="chip">Microsoft Office</span><span class="chip">Navisworks (basic)</span><span class="chip">SolidWorks (basic)</span><span class="chip">AutoSpool (basic)</span></div>
+      <h3 class="mt">Languages</h3><div class="tags"><span class="chip">English</span><span class="chip">Malayalam</span><span class="chip">Tamil</span></div></div>
+    <div class="edu"><h3>Education &amp; certifications</h3>
       <p><b>AMIE, Mechanical Engineering</b>Equivalent to Bachelor of Engineering, Institution of Engineers (India), 2023, UAE attested</p>
-      <p><b>Diploma in Mechanical Engineering</b>Government Polytechnic College, Kerala, 2015, UAE attested</p>
-      <p><b>Tekla Structures, Structural Steel Detailing</b>Trimble authorised training centre, 2024</p>
+      <p><b>Diploma in Mechanical Engineering</b>Government Polytechnic College, Kerala, 2012–2015, UAE attested</p>
+      <p><b>Structural Steel Detailing &amp; Modelling, Tekla Structures</b>Reliant Institute of Technology, Trimble Tekla authorised training centre, 2024</p>
+      <p><b>Foundation in Mechanical CAD (A+ grade)</b>STED Council, 2024</p>
     </div>
   </div>
+</div></section>
+
+<section class="s" id="apps"><div class="wrap">
+  <div class="rule"></div>
+  <div class="shead"><div class="callout"><span>E</span><i>apps</i></div><div><h2>Apps I've built</h2><p>Alongside engineering, I design and code desktop apps, some for engineering work and one published on the Microsoft Store. Open any app to see what it does.</p></div></div>
+  <div class="apps" id="applist"></div>
 </div></section>
 
 <section class="s" id="contact"><div class="wrap">
   <div class="rule"></div>
   <div class="contact">
-    <div class="left"><h2>Let's talk</h2><p>I'm open to pipe support, piping design and structural steel roles in the UAE and the Gulf, and to conversations about engineering automation.</p><a class="btn solid" href="mailto:vishnuprakash3321@gmail.com?subject=Role%20enquiry%20-%20Vishnu%20Prakash">Email me</a></div>
+    <div class="left"><h2>Let's talk</h2><p>I'm open to pipe support, piping design and structural steel roles in the UAE and the Gulf.</p><a class="btn solid" href="mailto:vishnuprakash3321@gmail.com?subject=Role%20enquiry%20-%20Vishnu%20Prakash">Email me</a></div>
     <div class="clist">
       <a href="mailto:vishnuprakash3321@gmail.com"><span>EMAIL</span><b>vishnuprakash3321@gmail.com</b></a>
       <a href="tel:+971507527950"><span>PHONE</span><b>+971 50 752 7950</b></a>

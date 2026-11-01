@@ -200,18 +200,34 @@ td li{margin:3px 0}
 footer{padding:36px 0 56px;font:500 14px var(--cond);color:var(--faint)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
-.awards{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.award{border:1.5px solid var(--ink);background:var(--sheet);display:flex;flex-direction:column}
-.award-img{padding:14px;border:0;border-bottom:1px solid var(--grid2);background:var(--paper);cursor:zoom-in;display:block}
-.award-img img{width:100%;aspect-ratio:1.42;object-fit:cover;border:1px solid var(--grid2);transition:transform .5s}
+.awards-wrap{position:relative}
+.awards{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 18px;scrollbar-width:thin;scrollbar-color:var(--ink2) transparent;cursor:grab}
+.awards.dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
+.awards::-webkit-scrollbar{height:6px}.awards::-webkit-scrollbar-thumb{background:var(--ink2)}
+.award{flex:0 0 calc((100% - 48px)/2.4);min-width:300px;scroll-snap-align:start;border:1.5px solid var(--ink);background:var(--sheet);display:flex;flex-direction:column}
+.award-img{padding:12px;border:0;border-bottom:1px solid var(--grid2);background:var(--paper);cursor:zoom-in;display:block}
+.award-img img{width:100%;aspect-ratio:1.42;object-fit:cover;object-position:center 30%;border:1px solid var(--grid2);transition:transform .5s;pointer-events:none;-webkit-user-drag:none}
 .award-img:hover img{transform:scale(1.02)}
-.award-txt{padding:20px 22px 24px}
+.award-txt{padding:18px 20px 22px}
 .award-when{font:600 14px var(--cond);color:var(--cl)}
-.award-txt h3{font-size:26px;margin:4px 0 2px}
+.award-txt h3{font-size:24px;margin:4px 0 2px}
 .award-txt .co{font:500 15px var(--cond);color:var(--dim);margin-bottom:10px}
 .award-txt p{font-size:15px;color:var(--ink2)}.award-txt p strong{color:var(--ink);font-weight:600}
-.award.feature{grid-column:1/-1;display:grid;grid-template-columns:1.25fr 1fr}.award.feature .award-img{border-bottom:0;border-right:1px solid var(--grid2)}.award.feature .award-img img{aspect-ratio:1.5;object-position:center 30%}.award.feature .award-txt{padding:32px;align-self:center}.award.feature h3{font-size:32px}
-@media(max-width:900px){.award.feature{grid-template-columns:1fr}.award.feature .award-img{border-right:0;border-bottom:1px solid var(--grid2)}}@media(max-width:720px){.awards{grid-template-columns:1fr}}
+.aw-nav{display:flex;gap:10px;justify-content:flex-end;margin:-20px 0 16px}
+.aw-nav button{width:44px;height:44px;border:1.5px solid var(--ink);border-radius:50%;background:var(--sheet);font:600 20px var(--cond);cursor:pointer;transition:background .15s,color .15s}
+.aw-nav button:hover:not(:disabled){background:var(--ink);color:var(--sheet)}
+.aw-nav button:disabled{opacity:.3;cursor:default}
+.aw-hint{font:500 14px var(--cond);color:var(--faint);margin-top:4px;display:none}
+@media(max-width:720px){.award{flex-basis:84%;min-width:0}.aw-nav{display:none}.aw-hint{display:block}}
+.psub{font-size:24px;margin-bottom:4px}.psub.mt{margin-top:56px}.psub-p{color:var(--ink2);font-size:15px;margin-bottom:16px}
+.iproj{display:grid;gap:24px;margin-top:16px}
+.ip{border:1.5px solid var(--ink);background:var(--sheet)}
+.ip-img{padding:12px;border:0;border-bottom:1px solid var(--grid2);background:var(--paper);cursor:zoom-in;display:block;width:100%}
+.ip-img img{width:100%;aspect-ratio:4/1;object-fit:cover;border:1px solid var(--grid2)}
+.ip-txt{padding:24px 26px}.ip-txt h3{font-size:28px;margin-bottom:14px}
+.ip-txt dl{margin:0;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-top:1px solid var(--grid2)}.ip-txt dl div{padding:10px 14px 0 0}
+.ip-txt dt{font:500 14px var(--cond);color:var(--faint);display:block}.ip-txt dd{margin:0;font-size:15px;color:var(--ink)}
+@media(max-width:720px){.ip-txt dl{grid-template-columns:1fr 1fr}.ip-img img{aspect-ratio:3/1}}
 /* lightbox */
 .lb{position:fixed;inset:0;z-index:100;background:rgba(27,39,51,.92);display:flex;align-items:center;justify-content:center;padding:60px 70px;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
 .lb.open{opacity:1;visibility:visible}
@@ -337,7 +353,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="about-text">
       <p>I'm a mechanical engineer with 10 years of experience in <strong>oil and gas EPC projects, structural steel and fabrication design, and manufacturing</strong>.</p>
       <p>As Pipe Support Lead at EPIC Piping International, I deliver GA, detail and fabrication drawings and material take-offs for onshore and offshore projects for <strong>ADNOC, Saudi Aramco, NPCC, Saipem, Tecnimont and JGC</strong>. I manage review and revision cycles, approve final deliverables, control client transmittals and coordinate with engineering, fabrication and QA/QC teams.</p>
-      <p>Before that I designed PVC pipe production equipment, manufacturing machinery and pre-engineered buildings, and started my career as an NDT inspector. I'm certified in structural steel detailing and modelling with Tekla Structures.</p>
+      <p>Before that I designed PVC pipe production equipment, manufacturing machinery and pre-engineered buildings, and started my career as an NDT inspector. I've been drafting since school, with engineering graphics from Class VIII in technical education. I'm certified in structural steel detailing and modelling with Tekla Structures.</p>
       <div class="facts">
         <div class="fact"><b>10+</b><span>years of experience</span></div>
         <div class="fact"><b>10</b><span>major EPC projects</span></div>
@@ -371,7 +387,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <section class="s" id="projects"><div class="wrap">
   <div class="rule"></div>
-  <div class="shead"><div class="callout"><span>C</span><i>projects</i></div><div><h2>Major projects</h2><p>Major EPC projects I delivered pipe support drawings for at EPIC Piping International.</p></div></div>
+  <div class="shead"><div class="callout"><span>C</span><i>projects</i></div><div><h2>Major projects</h2></div></div>
+  <h3 class="psub">Oil and gas EPC projects, UAE and Saudi Arabia</h3><p class="psub-p">Pipe support drawings delivered at EPIC Piping International.</p>
   <table class="bom">
     <thead><tr><th>ITEM</th><th>PROJECT</th><th>CONTRACTOR</th><th>CLIENT</th></tr></thead>
     <tbody>
@@ -387,25 +404,34 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <tr><td>10</td><td class="pn">Habshan Complex Restoration</td><td>Petrofac</td><td>ADNOC</td></tr>
     </tbody>
   </table>
+  <h3 class="psub mt">Projects in India</h3>
+  <div class="iproj">
+    <article class="ip">
+      <button type="button" class="ip-img" data-src="project-peb-telangana.jpg" aria-label="View photo of the PEB extraction plant in Telangana"><img src="project-peb-telangana.jpg" alt="Completed pre-engineered steel building for an extraction plant in Telangana" loading="lazy"></button>
+      <div class="ip-txt">
+        <h3>PEB extraction plant</h3>
+        <dl><div><dt>Structure</dt><dd>Composite structure pre-engineered building (PEB)</dd></div><div><dt>Size</dt><dd>20 × 120 m</dd></div><div><dt>Location</dt><dd>Telangana, India</dd></div><div><dt>Year</dt><dd>2019</dd></div></dl>
+      </div>
+    </article>
+  </div>
 </div></section>
 
 <section class="s" id="awards"><div class="wrap">
   <div class="rule"></div>
   <div class="shead"><div class="callout"><span>D</span><i>awards</i></div><div><h2>Awards &amp; recognition</h2></div></div>
-  <div class="awards">
-    <article class="award feature">
-      <button type="button" class="award-img" data-src="award-national-petrochemicals.jpg" aria-label="View photo from the 11th National Petrochemicals Awards"><img src="award-national-petrochemicals.jpg" alt="Vishnu Prakash receiving the award at the 11th National Petrochemicals Awards, 2022" loading="lazy"></button>
-      <div class="award-txt"><span class="award-when">September 2022</span><h3>Runner-up, 11th National Petrochemicals Awards</h3><div class="co">Government of India, Ministry of Chemicals &amp; Fertilizers, Department of Chemicals &amp; Petrochemicals</div><p>Runner-up in the <strong>Polymers in Agriculture and Water Conservation</strong> category, for the Mirror Finish Technology (MFT) PVC pipe project at Wellworth Polymers.</p></div>
-    </article>
-    <article class="award">
-      <button type="button" class="award-img" data-src="award-epic-top-performer.jpg" aria-label="View Top Performer certificate"><img src="award-epic-top-performer.jpg" alt="Top Performer certificate from EPIC Piping, EPIC Day 2026" loading="lazy"></button>
+  <div class="aw-nav"><button type="button" class="aw-prev" aria-label="Previous award">‹</button><button type="button" class="aw-next" aria-label="Next award">›</button></div>
+  <div class="awards" id="awards-row">
+    <article class="award"><button type="button" class="award-img" data-src="award-epic-top-performer.jpg" aria-label="View Top Performer certificate"><img src="award-epic-top-performer.jpg" alt="Top Performer certificate from EPIC Piping, EPIC Day 2026" loading="lazy"></button>
       <div class="award-txt"><span class="award-when">2026</span><h3>Top Performer</h3><div class="co">EPIC Piping, EPIC Day 2026</div><p>For outstanding performance and dedicated contribution to the Engineering Department.</p></div>
     </article>
-    <article class="award">
-      <button type="button" class="award-img" data-src="award-jgc-appreciation.jpg" aria-label="View Certificate of Appreciation from JGC Arabia"><img src="award-jgc-appreciation.jpg" alt="Certificate of Appreciation from JGC Arabia, Zuluf Hydrocarbon Facility Project" loading="lazy"></button>
+    <article class="award"><button type="button" class="award-img" data-src="award-jgc-appreciation.jpg" aria-label="View Certificate of Appreciation from JGC Arabia"><img src="award-jgc-appreciation.jpg" alt="Certificate of Appreciation from JGC Arabia, Zuluf Hydrocarbon Facility Project" loading="lazy"></button>
       <div class="award-txt"><span class="award-when">June 2025</span><h3>Certificate of Appreciation</h3><div class="co">JGC Arabia, Saudi Aramco Zuluf Hydrocarbon Facility Project</div><p>Presented by the JGC Arabia Piping Manager as Pipe Support Lead, for diligent and productive work with the highest concern for safety and quality.</p></div>
     </article>
+    <article class="award"><button type="button" class="award-img" data-src="award-national-petrochemicals.jpg" aria-label="View photo from the 11th National Petrochemicals Awards"><img src="award-national-petrochemicals.jpg" alt="Vishnu Prakash receiving the award at the 11th National Petrochemicals Awards, 2022" loading="lazy"></button>
+      <div class="award-txt"><span class="award-when">September 2022</span><h3>Runner-up, 11th National Petrochemicals Awards</h3><div class="co">Government of India, Ministry of Chemicals &amp; Fertilizers, Department of Chemicals &amp; Petrochemicals</div><p>Runner-up in the <strong>Polymers in Agriculture and Water Conservation</strong> category, for the Mirror Finish Technology (MFT) PVC pipe project at Wellworth Polymers.</p></div>
+    </article>
   </div>
+  <p class="aw-hint">Swipe to see more</p>
 </div></section>
 
 <section class="s" id="skills"><div class="wrap">
@@ -423,6 +449,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="edu"><h3>Education</h3>
       <p><b>AMIE, Mechanical Engineering</b>Equivalent to Bachelor of Engineering, Institution of Engineers (India), 2023, UAE attested</p>
       <p><b>Diploma in Mechanical Engineering</b>Government Polytechnic College, Kerala, 2012–2015, UAE attested</p>
+      <p><b>Vocational Higher Secondary Education (Class XII)</b>Specialised in MRTTW (automobile), 2010–2012</p>
+      <p><b>Technical Secondary Education (Class X)</b>Specialised in Motor Mechanic (automobile), with engineering graphics and engineering drafting from Class VIII, 2007–2010</p>
       <h3 class="mt">Certifications</h3>
       <p><b>Structural Steel Detailing &amp; Modelling, Tekla Structures</b>Reliant Institute of Technology (Trimble Tekla Authorized Training Centre), 2024<span class="certno">Cert no. RIT-2024/TS/00023</span></p>
       <p><b>Foundation in Mechanical CAD (A+ grade)</b>STED Council, 2024<span class="certno">Cert no. 479024453</span></p>
@@ -521,6 +549,16 @@ lb.addEventListener('click',e=>{if(e.target===lb)closeLB()});
 document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')lb.querySelector('.pv').click();if(e.key==='ArrowRight')lb.querySelector('.nx').click()});
 
 document.querySelectorAll('.award-img').forEach(b=>b.addEventListener('click',()=>{const all=[...document.querySelectorAll('.award-img')];openLB(all.map(x=>x.dataset.src),all.indexOf(b))}));
+(()=>{const row=document.getElementById('awards-row');if(!row)return;const pv=document.querySelector('.aw-prev'),nx=document.querySelector('.aw-next');
+const step=()=>row.querySelector('.award').offsetWidth+24;
+const upd=()=>{pv.disabled=row.scrollLeft<4;nx.disabled=row.scrollLeft+row.clientWidth>=row.scrollWidth-4};
+pv.onclick=()=>row.scrollBy({left:-step()});nx.onclick=()=>row.scrollBy({left:step()});row.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+let down=false,sx=0,sl=0,moved=false;
+row.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;down=true;moved=false;sx=e.clientX;sl=row.scrollLeft});
+window.addEventListener('pointermove',e=>{if(!down)return;const dx=e.clientX-sx;if(Math.abs(dx)>5){moved=true;row.classList.add('dragging')}row.scrollLeft=sl-dx});
+window.addEventListener('pointerup',()=>{if(!down)return;down=false;row.classList.remove('dragging')});
+row.addEventListener('click',e=>{if(moved){e.stopPropagation();e.preventDefault();moved=false}},true);})();
+document.querySelectorAll('.ip-img').forEach(b=>b.addEventListener('click',()=>{const all=[...document.querySelectorAll('.ip-img')];openLB(all.map(x=>x.dataset.src),all.indexOf(b))}));
 /* drafted rules draw in once */
 if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.6});document.querySelectorAll('.rule').forEach(r=>io.observe(r))}else document.querySelectorAll('.rule').forEach(r=>r.classList.add('in'));
 

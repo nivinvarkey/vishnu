@@ -157,6 +157,7 @@ section.s{padding:96px 0}
 .plate svg{width:46%;height:auto}
 .editions{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--ink2);margin-bottom:20px}
 .editions div{padding:10px 14px}
+.store-btn{margin-bottom:18px}
 .editions div+div{border-left:1px solid var(--ink2)}
 .editions b{font:600 19px var(--cond);display:block}
 .editions span{font-size:14px;color:var(--ink2)}
@@ -356,7 +357,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="about-text">
       <p>I'm a mechanical engineer with 10 years of experience in <strong>oil and gas EPC projects, structural steel and fabrication design, and manufacturing</strong>.</p>
       <p>As Pipe Support Lead at EPIC Piping International, I deliver GA, detail and fabrication drawings and material take-offs for onshore and offshore projects for <strong>ADNOC, Saudi Aramco, NPCC, Saipem, Tecnimont and JGC</strong>. I manage review and revision cycles, approve final deliverables, control client transmittals and coordinate with engineering, fabrication and QA/QC teams.</p>
-      <p>Before that I designed PVC pipe production equipment, manufacturing machinery and pre-engineered buildings, and started my career as an NDT inspector. I've been drafting since school, with engineering graphics from Class VIII in technical education. I'm certified in structural steel detailing and modelling with Tekla Structures.</p>
+      <p>Before that I designed PVC pipe production equipment, manufacturing machinery and pre-engineered buildings, and started my career as an NDT inspector. I'm certified in structural steel detailing and modelling with Tekla Structures.</p>
       <div class="facts">
         <div class="fact"><b>10+</b><span>years of experience</span></div>
         <div class="fact"><b>10</b><span>major EPC projects</span></div>
@@ -508,9 +509,9 @@ const APPS=[
   points:['<strong>Trunnion calculator</strong> for headers and 90° elbows: cut length, max and min lengths, saddle depth, clash check and weight, verified against the company Excel calculator','<strong>Saddle cutting template</strong> unrolled with marking points, exported to Excel','<strong>Typical supports</strong>: T-shoes, guides, posts, cantilevers and goalposts, parametric like Tekla custom components','<strong>Steel section library</strong> with full properties and Tekla profile catalog import','Support drawing sheets in A3 company format','Pipe, plate, profile, flange and fitting weights, trunnion register and one-click Add to BOM'],
   shots:['trunnion-calculator.png','saddle-template.png','trunnion-drawing.png','typical-parts.png','section-library.png'],plate:'sheets',open:true},
  {id:'vpfh',name:'VP File Handler',sum:'Rename, copy and move thousands of files from an Excel list.',chips:[['store','Microsoft Store'],['','Python'],['','Windows']],
-  desc:'A Windows app I designed, built and published. Paste two columns from Excel (current name and new name), preview the result, then run it, with no scripts.',
+  desc:'A Windows app I designed, built and published on the Microsoft Store. Paste two columns from Excel (current name and new name), preview the result, then run it, with no scripts.',
   points:['<strong>Rename</strong> up to 5,000 rows per run, with one-click undo','<strong>Copy and move</strong> only the files in your list, optionally renaming them','Preview with a clear status for every row before anything changes','Filter by file type and name, include sub-folders, overwrite / keep both / skip duplicates','Works offline: no account, no ads, no data collection'],
-  editions:true,shots:['vp-file-handler.png'],plate:'sheets'},
+  editions:true,store:'https://apps.microsoft.com/detail/9NFCTRV2ZF96',shots:['vp-file-handler.png'],plate:'sheets'},
  {id:'dpr',name:'Team DPR Tracker',sum:'Turns everyone\'s daily progress reports into team and project dashboards.',chips:[['','Python'],['','Excel'],['','Pandas']],
   desc:'Reads every engineer\'s Daily Progress Report Excel file and turns it into performance and project progress reports for my own team.',
   points:['<strong>Dashboard</strong>: detailed, checked, released and hold totals with achievement against target','<strong>Performance sheet</strong> per engineer against daily targets, colour coded','<strong>Project progress graphs</strong> against total quantity targets','Daily quantity report ready to send to the manager','Fair targets that count working days from each person\'s own start date'],
@@ -525,9 +526,10 @@ APPS.forEach(a=>{
   const el=document.createElement('article');el.className='app'+(a.open?' open':'');el.id='app-'+a.id;
   const chips=a.chips.map(c=>`<span class="chip ${c[0]}">${c[1]}</span>`).join('');
   const shots=a.shots.map((s,i)=>`<button type="button" data-i="${i}" aria-label="Open screenshot ${i+1} of ${a.name}"><img src="${s}" alt="${a.name} screenshot ${i+1}" loading="lazy"></button>`).join('');
+  const st=a.store?`<a class="btn solid store-btn" href="${a.store}" target="_blank" rel="noopener noreferrer">Get it on the Microsoft Store</a>`:'';
   const ed=a.editions?'<div class="editions"><div><b>Lite</b><span>Free, every feature, 3 runs a day</span></div><div><b>Pro</b><span>Unlimited runs, one payment</span></div></div>':'';
   el.innerHTML=`<button class="app-head" aria-expanded="${!!a.open}" aria-controls="body-${a.id}"><span class="app-thumb">${a.shots.length?`<img src="${a.shots[0]}" alt="" loading="lazy">`:PLATES[a.plate]}</span><span><span class="app-name">${a.name}</span><span class="app-sum" style="display:block">${a.sum}</span></span><span class="app-meta">${chips}</span><span class="tog" aria-hidden="true"></span></button>
-  <div class="app-body" id="body-${a.id}"><div class="app-inner"><div class="app-content"><div><p>${a.desc}</p><ul>${a.points.map(p=>`<li>${p}</li>`).join('')}</ul>${ed}<div class="tags">${chips}</div></div><div class="gallery">${shots}</div></div></div></div>`;
+  <div class="app-body" id="body-${a.id}"><div class="app-inner"><div class="app-content"><div><p>${a.desc}</p><ul>${a.points.map(p=>`<li>${p}</li>`).join('')}</ul>${ed}${st}<div class="tags">${chips}</div></div><div class="gallery">${shots}</div></div></div></div>`;
   list.appendChild(el);
   // hide screenshots that are not uploaded yet; show a drawing plate instead
   const gal=el.querySelector('.gallery'),thumb=el.querySelector('.app-thumb');
